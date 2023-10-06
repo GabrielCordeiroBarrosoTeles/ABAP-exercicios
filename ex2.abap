@@ -14,8 +14,8 @@ SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-001.
 SELECTION-SCREEN END OF BLOCK b1.
 DATA: salario TYPE p DECIMALS 1.
 
-IF hs_trab >= 160.
-  salario = ( ( ( 160 ) * v_hora ) + ( ( ( hs_trab - 160 ) * v_hora )  * '0.5' ) ).
+IF hs_trab > 160.
+  salario = ( ( ( 160 ) * v_hora ) + ( ( ( hs_trab - 160 ) * ( v_hora * '1.5')  ) ) ).
 ELSE.
  salario = ( hs_trab ) * v_hora.
 ENDIF.
