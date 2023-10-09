@@ -19,6 +19,30 @@ Faça um programa para a leitura de duas notas parciais de um aluno.
 - A mensagem “Aprovado com Distinção”, se a média for igual a dez;
 - A mensagem “Reprovado” se a média for menor de do que sete.
 
+### Questão 7
+O custo de um carro novo ao consumidor é a soma do custo de fábrica com a
+porcentagem do distribuidor e dos impostos (aplicados ao custo de fábrica). Supondo que
+o percentual do distribuidor seja de 28% e os impostos de 45%, escrever um algoritmo
+para ler o custo de fábrica de um carro, calcular e escrever o custo final ao consumidor.
+
+### Questão 8
+Uma revendedora de carros usados paga a seus funcionários vendedores um salário fixo
+por mês, mais uma comissão também fixa para cada carro vendido e mais 5% do valor
+das vendas por ele efetuadas. Escrever um algoritmo que leia o número de carros por ele
+vendidos, o valor total de suas vendas, o salário fixo e o valor que ele recebe por carro
+vendido. Calcule e escreva o salário final do vendedor.
+
+### Questão 9. 
+Faça um programa que leia três números, verifique (usando IF / ELSE) e mostre o maior
+e o menor deles;
+
+### Questão 10. 
+Faça um programa para a leitura de duas notas parciais de um aluno.
+• A mensagem “Aprovado”, se a média alcançada for maior ou igual a sete;
+• A mensagem “Aprovado com Distinção”, se a média for igual a dez;
+• A mensagem “Reprovado” se a média for menor de do que sete;
+
+
 ### Questão 11
 As organizações CSM resolveram dar um aumento de salário aos seus colaboradores e
 lhe contrataram para desenvolver o programa que calculará os reajustes.
