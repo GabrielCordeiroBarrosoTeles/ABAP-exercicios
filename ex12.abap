@@ -17,28 +17,39 @@ REPORT ZPROG_EX12_05.
 *( - ) INSS ( 10% ) : R$ 110,00
 *FGTS ( 11% ) : R$ 121,00
 *Total de descontos : R$ 165,00
-*Salário Líquido : R$ 935,00 
+*Salário Líquido : R$ 935,00
 
 
 SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-001.
   PARAMETERS: v_hora TYPE p DECIMALS 1,
               qtd_hora TYPE p DECIMALS 1.
-  
+
 SELECTION-SCREEN END OF BLOCK b1.
 DATA: sal_brut TYPE p DECIMALS 1,
       sal_liq TYPE p DECIMALS 1,
       descon TYPE p DECIMALS 1,
-      porc TYPE p DECIMALS 1.
+      porc TYPE p DECIMALS 1,
+      ir TYPE p DECIMALS 1,
+      inss TYPE p DECIMALS 1,
+      fgts TYPE p DECIMALS 1.
 sal_brut = v_hora * qtd_hora.
 
 IF sal_brut <= 900.
-  porc = '0,5'. "ATÉ AQUI ESTA CORRETO
-  descon = sal_brut * .porc
-  WRITE: 'Salário bruto (',v_hora,'*',qtd_hora,'): R$',sal_brut,
-       / 'O VALOR DO AUMENTO FOI: ' , por,
-       / 'O NOVO SALÁRIO É: ' , resulta,
-       / 'O AUMENTO APLICADO FOI DE 20%'.
-ELSEIF sal > 280 ) AND ( sal < 700 ).
+  porc = '0,5'. 
+  descon = sal_brut * porc.
+  sal_liq = sal_brut - descon.
+  ir = sal_brut * '0,05'.
+  inss = sal_brut * '0,1'.
+  fgts  = sal_brut * '0,11'.
+  
+  WRITE: 'Salário bruto (',v_hora,' * ', qtd_hora , '): R$' , sal_brut,  
+       / '( - ) IR ( 5%): R$', ir,
+       / '( - ) INSS ( 10% ) :R$', inss,
+       / '( - ) FGTS ( 11% ) :R$', fgts,
+       / 'Total de descontos : R$', descon,
+       / 'Salário Líquido : R$', sal_liq.
+  "ate aqui estar correto
+ELSEIF ( sal > 280 ) AND ( sal < 700 ).
   por = ( sal * 15 ) / 100.
   resulta = sal + por.
   WRITE: 'O VALOR DO SALÁRIO ANTIGO É: ', sal,
